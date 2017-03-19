@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg 
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 225 314" width="225px" height="314px">
+
+    <rect width="100%" height="100%" fill="#fefefe"/>
+
+	<text id="position" font-size="150"
+		  fill="black"
+		  font-family="Verdana"
+		  text-anchor="middle"
+		  alignment-baseline="baseline"
+		  x="50%"
+		  y="70%">
+		?
+	</text>
+</svg>

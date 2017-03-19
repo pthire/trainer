@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cards Deck Simulator</title>
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+	<meta charset="UTF-8">
+    <meta id="keywords" content="trainer memorized deck magic aronson  tamariz stebbins joyal trick">
+    <meta id="author" content="Patrice THIRÉ">
+    <meta id="content-language" content="">
+    <script src="trainer.js"></script>
+
+    <style type="text/css">
+
+	#carpet1 {
+		background-color: #2D7D34;
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		width: 1000px;
+		height: 630px;
+		border-radius: 25px;;
+		box-shadow: 0px 0px 18px 7px rgba(50, 50, 50, 0.3);
+	}
+	#carpet2 {
+		background-color: #2D7D34;
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		border: 10px solid #ffd24d;
+		width: 970px;
+		height: 600px;
+		border-radius: 30px;;
+	}
+
+	#coinHG {
+		background-color: #2D7D34;
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		width: 60px;
+		height: 60px;
+		border-top: 0px solid #ffd24d;
+		border-right: 10px solid #ffd24d;
+		border-left: 0px solid #ffd24d;
+		border-bottom: 10px solid #ffd24d;
+		border-top-left-radius: 25px;;
+		border-top-right-radius: 0px;;
+		border-bottom-left-radius: 0px;;
+		border-bottom-right-radius: 25px;;
+	}
+	#coinHD {
+		background-color: #2D7D34;
+		position: absolute;
+		top: 10px;
+		left: 930px;
+		height: 60px;
+		border-top-left-radius: 0px;;
+		border-top: 0px solid #ffd24d;
+		border-right: 0px solid #ffd24d;
+		border-left: 10px solid #ffd24d;
+		border-bottom: 10px solid #ffd24d;
+		width: 60px;
+		border-top-right-radius: 25px;;
+		border-bottom-left-radius: 25px;;
+		border-bottom-right-radius: 0px;;
+	}
+	#coinBG {
+		background-color: #2D7D34;
+		position: absolute;
+		top: 560px;
+		left: 10px;
+		width: 60px;
+		height: 60px;
+		border-top: 10px solid #ffd24d;
+		border-right: 10px solid #ffd24d;
+		border-left: 0px solid #ffd24d;
+		border-bottom: 0px solid #ffd24d;
+		border-top-left-radius: 0px;;
+		border-top-right-radius: 25px;;
+		border-bottom-left-radius: 25px;;
+		border-bottom-right-radius: 0px;;
+	}
+	#coinBD {
+		background-color: #2D7D34;
+		position: absolute;
+		top: 560px;
+		left: 930px;
+		width: 60px;
+		height: 60px;
+		border-top: 10px solid #ffd24d;
+		border-right: 0px solid #ffd24d;
+		border-left: 10px solid #ffd24d;
+		border-bottom: 0px solid #ffd24d;
+		border-top-left-radius: 25px;;
+		border-top-right-radius: 0px;;
+		border-bottom-left-radius: 0px;;
+		border-bottom-right-radius: 25px;;
+	}
+
+	#logo  {
+		position: absolute;
+		top: 50px;
+		left: 290px;
+	}
+
+	#number {
+		position: absolute;
+		top: 40%;
+		left: 20%;
+		box-shadow: 0px 0px 18px 6px rgba(50, 50, 50, 1.0);
+		border-radius: 50%;
+	}
+
+	#hPosition {
+		z-index: 1;
+		position: absolute;
+		top: 40%;
+		left: 20%;
+		width: 140px;;
+		height: 145px;
+		border-radius: 50%;
+	}
+
+	#card {
+		position: absolute;
+		top: 25%;
+		left: 55%;
+		box-shadow: 0px 0px 18px 6px rgba(50, 50, 50, 1.0);
+		border-radius: 10px;
+	}
+
+	#hCard {
+		z-index: 1;
+		position: absolute;
+		top: 25%;
+		left: 55%;
+		width: 225px;;
+		height: 315px;
+	}
+
+	#currentDeck {
+		position: relative;
+		left:450px;
+		top: 540px;
+	}
+
+	#decks {
+		z-index: 2;
+		display: none;
+		position: absolute;
+		top: 160px;
+		left: 185px;
+		background-color: #2D7D34;
+		border: 5px solid #ffd24d;
+		border-radius: 20px;
+		width: 600px;
+		height: 300px;
+		text-align: center;
+		padding: 20px;
+	}
+
+	#position {
+		border-radius: 50%;
+	}
+
+	.deckName {
+		margin: 30px 20px 0px 20px;
+	}
+	
+	#cancel {
+		position: relative;
+		top: 25px;
+	}
+
+	#choose {
+		position: relative;
+		top: 50px;
+	}
+
+    </style>
+
+</head>
+
+<body onload="init()">
+
+	<div id="carpet1">
+	</div>
+
+	<div id="carpet2">
+
+		<svg id="number" width="144" height="144" viewBox="0 0 64 64">
+			<circle id="circle" cx="32"
+					cy="32"
+					r="30"
+					stroke="white"
+					stroke-width="2"
+					fill="#ffffff"/>
+			<text id="position" font-size="36"
+				  fill="black"
+				  font-family="Verdana"
+				  text-anchor="middle"
+				  alignment-baseline="baseline"
+				  x="32"
+				  y="44.4">
+				1
+			</text>
+		</svg>
+
+		<div id="hPosition"></div>
+
+		<img id="card" src="cards/ks.svg">
+
+		<div id="hCard"></div>
+
+	</div>
+
+	<img id="logo" src="images/logo.png" title="Memorized Deck Trainer - Version : 1.0">
+
+	<div id="coinHG"></div>
+	<div id="coinHD"></div>
+	<div id="coinBG"></div>
+	<div id="coinBD"></div>
+
+	<img class="command" id="currentDeck" src="images/cancel.png" title="Click to change deck"></img>
+
+	<div id="decks">
+		<img class="deckName" id="tamariz" src="images/tamariz.png"></img>
+		<img class="deckName" id="aronson" src="images/aronson.png"></img>
+		<img class="deckName" id="isis" src="images/isis.png"></img>
+		<br>
+		<img class="deckName" id="siStebbins" src="images/siStebbins.png"></img>
+		<img class="deckName" id="stay" src="images/stay.png"></img>
+		<img class="deckName" id="joyal" src="images/joyal.png"></img>
+		<br>
+		<img class="deckName" id="osterlind" src="images/osterlind.png"></img>
+		<img class="deckName" id="nikola" src="images/nikola.png"></img>
+		<img class="deckName" id="eightKings" src="images/eightKings.png"></img>
+		<br>
+		<img class="deckName" id="cancel" src="images/cancel.png"></img>
+		<img id="choose" src="images/choose.png"></img>
+	</div>
+
+</body>
+</html>
